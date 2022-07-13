@@ -65,14 +65,63 @@ export class HomeComponent implements OnInit {
     }
   ]
 
-  //ngStyle
-  mycolor:string='red';
+  //ngClass
+  //Using JavaScript object
+  cssClass: CssClass = new CssClass();
+  //ngClass using Array
+  cssArray: string[] = ['red', 'size20'];
 
+
+  //ngStyle
+  mycolor: string = 'red';
+  
+  getColor(country: any) {
+    (2)
+    switch (country) {
+      case 'UK':
+        return 'green';
+      case 'USA':
+        return 'blue';
+      case 'HK':
+        return 'red';
+      default:
+        return 'pink';
+    }
+  }
+
+  people: any[] = [
+    {
+      "name": "John",
+      "country": 'UK'
+    },
+    {
+      "name": "Peter",
+      "country": 'USA'
+    },
+    {
+      "name": "Shaun",
+      "country": 'HK'
+    },
+    {
+      "name": "Paul",
+      "country": 'UK'
+    },
+    {
+      "name": "Sam",
+      "country": 'USA'
+    }
+  ];
 }
 //class for *ngFor demo
-class Courses 
-{
-  courseid: string|undefined;
+class Courses {
+  courseid: string | undefined;
   coursename: string | undefined;
 }
+
+//ngClass Using JavaScript object
+class CssClass {
+  red: boolean = true;
+  size20: boolean = true;
+}
+
 

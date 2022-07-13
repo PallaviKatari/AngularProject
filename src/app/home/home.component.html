@@ -1,10 +1,11 @@
+
 <!-- STRING INTERPOLATION -->
 <h1>Hello!!!This is {{title}}</h1>
 <h3>{{random_number}} My name is {{name}}</h3>
-<img src="assets/img3.jpg" height="100px" width="100px" alt="jQuery"/>
+<img src="assets/img3.jpg" height="100px" width="100px" alt="jQuery" />
 <br>
 <!-- PROPERTY BINDING -->
-<img [src]="image" alt="CSS" height="100px" width="100px"/>
+<img [src]="image" alt="CSS" height="100px" width="100px" />
 <br>
 <!-- EVENT BINDING -->
 <button (click)="onClick()">Event Binding</button>
@@ -19,11 +20,36 @@
 <br>
 <h4>{{random_number}}</h4>
 <ul>
-    <li *ngFor="let course of courses">
+    <li *ngFor="let course of courses" [ngStyle]="{'color':mycolor}">
         {{course.courseid}} - {{course.coursename}}
     </li>
 </ul>
+<!-- mycolor-red -->
+<input [(ngModel)]="mycolor" type="text" />
+<div [ngStyle]="{'color':mycolor}">Change the Color</div>
 
-<input [(ngModel)]="mycolor" type="text"/>
-<div [ngStyle]="{'color':mycolor}">Change the Color</div> 
+<!-- ngStyle Demo -->
+<ul *ngFor="let person of people">
+    <li [ngStyle]="{'font-size.px':24}" [style.color]="getColor(person.country)">{{ person.name }} ({{ person.country
+        }})
+    </li>
+</ul>
+<!-- ngClass Demo -->
+<ul *ngFor="let person of people">
+    <li [class.text-dark]="person.country === 'UK'" [class.text-info]="person.country === 'USA'"
+        [class.text-warning]="person.country === 'HK'">{{ person.name }} ({{ person.country }})
+    </li>
+</ul>
 <br>
+<!--ngClass-->
+<div class="row" class="container-fluid">
+    <div [ngClass]="cssArray"> Red Text with Size 20px : from component as object</div>
+</div>
+
+<hr>
+<!--Multiple Styles-->
+<p [ngStyle]="{'color': 'purple',
+                 'font-size': '20px',
+                 'font-weight': 'bold'}">
+    Multiple styles
+</p>
