@@ -1,48 +1,29 @@
 import { Component, OnInit } from '@angular/core';
+import * as data from '../data/sample.json';
 
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-career',
   templateUrl: './career.component.html',
   styleUrls: ['./career.component.css']
 })
+ 
 export class CareerComponent implements OnInit {
 
-  constructor() { }
+  var1: any|undefined;
+
+  constructor(public httpClient: HttpClient)
+  {
+
+  }
+  readData(){
+  this.httpClient.get('https://fakestoreapi.com/users').subscribe((resp)=>{
+  this.var1 = resp;
+  });
+  }
 
   ngOnInit(): void {
   }
-  name="John";
-
-  //*ngFor
-  users: Users[] = [
-    {
-      userid: "1",
-      username: 'John'
-    },
-    {
-      userid: "2",
-      username: 'Peter'
-    },
-    {
-      userid: "3",
-      username: 'Sam'
-    },
-    {
-      userid: "4",
-      username: 'Shaun'
-    },
-    {
-      userid: "5",
-      username: 'Jancy'
-    }
-    
-  ]
-
-
-}
-
-//class for *ngFor demo
-class Users {
-  userid: string | undefined;
-  username: string | undefined;
+  career: any = (data as any).default;
+  
 }

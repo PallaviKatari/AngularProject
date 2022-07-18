@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   name = 'John';
   random_number = ""
   //Property Binding
-  image = "/assets/img2.jpg";
+  image = "../assets/img2.jpg";
   //Event Binding
   onClick() {
     alert("I am an Event Binding")
@@ -69,11 +69,11 @@ export class HomeComponent implements OnInit {
   //Using JavaScript object
   cssClass: CssClass = new CssClass();
   //ngClass using Array
-  cssArray: string[] = ['red', 'size20'];
+  cssArray: string[] = ['red', 'size20','yellow','shadow'];
 
 
   //ngStyle
-  mycolor: string = 'red';
+  mycolor: string = 'blue';
   
   getColor(country: any) {
     (2)
@@ -82,7 +82,7 @@ export class HomeComponent implements OnInit {
         return 'green';
       case 'USA':
         return 'blue';
-      case 'HK':
+      case 'IN':
         return 'red';
       default:
         return 'pink';
@@ -100,11 +100,11 @@ export class HomeComponent implements OnInit {
     },
     {
       "name": "Shaun",
-      "country": 'HK'
+      "country": 'AUS'
     },
     {
       "name": "Paul",
-      "country": 'UK'
+      "country": 'IN'
     },
     {
       "name": "Sam",
@@ -122,6 +122,8 @@ class Courses {
 class CssClass {
   red: boolean = true;
   size20: boolean = true;
+  yellow:boolean=true;
+  shadow:boolean=true;
 }
 
 

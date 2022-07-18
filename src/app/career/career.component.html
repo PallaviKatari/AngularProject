@@ -1,7 +1,41 @@
-<p>{{name}}</p>
-<br>
+<!-- Using a REST API -->
+<!-- We will be using a free service called JSONPlaceholder to retrieve JSON data and test our code. 
+We can create a function to make a GET request to retrieve users data  -->
+<button (click)="readData()">GET Users</button>
 <ul>
-    <li *ngFor="let user of users">
-        {{user.userid}} - {{user.username}}
+    <li *ngFor="let num of var1">
+    {{num.username}} - {{num.address.city}}
     </li>
 </ul>
+<!-- iterate through all the JSON data from the local JSON file sample.json -->
+<div *ngFor="let item of career" style="margin-top: auto;">
+    <div class="row">
+        <div class="col-lg-3">
+            <img [src]="item.img">
+        </div>
+        <div class="card col-lg-6  " style="margin-top: 50px;">
+            <div class="card-body col-lg-12">
+                <div class="row" style="border: solid;border-color: rgb(8, 8, 8);margin-top: 50px;">
+                    <div class="col-lg-7">
+                        <!-- PROPERTY BINDING -->
+                        <img [src]="item.img">
+                    </div>
+                    <div class="col-lg-5" style="margin-top: 30px;">
+                        <div>
+                            {{item.name | uppercase}}
+                        </div>
+                        <div>
+                            <p>{{item.description | uppercase}}</p>
+                            <hr>
+                            <p>{{item.role|uppercase}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <img [src]="item.img">
+        </div>
+    </div>
+</div>
+
