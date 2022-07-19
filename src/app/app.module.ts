@@ -12,6 +12,8 @@ import { CareerComponent } from './career/career.component';
 import { CoursesComponent } from './courses/courses.component';
 //Angular provides a client HTTP API
 import { HttpClientModule } from '@angular/common/http';
+import { AngularCourseComponent } from './angular-course/angular-course.component';
+import { ReactCourseComponent } from './react-course/react-course.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     HomeComponent,
     CareerComponent,
-    CoursesComponent
+    CoursesComponent,
+    AngularCourseComponent,
+    ReactCourseComponent
   ],
   imports: [
     BrowserModule,
