@@ -1,21 +1,51 @@
+<!-- iterate through all the JSON data from the home.service.ts -->
+<div style="margin-top: auto;">
+    <div class="row">
+        <div class="card col-lg-6" *ngFor="let item of users" style="margin-top: 50px;">
+            <div class="card-body col-lg-12">
+                <div class="row" style="border: solid;border-color: rgb(8, 8, 8);margin-top: 50px;">
+                    <div class="col-lg-5">
+                        <!-- PROPERTY BINDING -->
+                        <img [src]="item.image">
+                    </div>
+                    <div class="col-lg-7" style="margin-top: 30px;">
+                        <div>
+                            <!-- CLASS BINDING-ngClass,EVENT BINDING-(click),PIPES -->
+                            {{item.name.firstname+ " " + item.name.lastname | uppercase}}
+                            <span [ngClass]="getClass()" (click)="showUserDetailsToggle()"></span>
+                        </div>
+                        <!-- TOGGLE EFFECT - SHOW AND HIDE CUSTOMERS DETAILS -->
+                        <div [hidden]="userDetail">
+                            <p>{{item.username | uppercase}}</p>
+                            <p>{{item.email}}</p>
+                            <p>{{item.phone}}</p>
+                            <p>{{item.address.city}}</p>
+                            <p>{{item.address.zipcode}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- STRING INTERPOLATION -->
-<h1>Hello!!!This is {{title}}</h1>
+<!-- <h1>Hello!!!This is {{title}}</h1>
 <h3>{{random_number}} My name is {{name}}</h3>
 <img src="assets/img3.jpg" height="100px" width="100px" alt="jQuery" />
-<br>
+<br> -->
 <!-- PROPERTY BINDING -->
-<img [src]="image" alt="CSS" height="100px" width="100px" />
-<br>
+<!-- <img [src]="image" alt="CSS" height="100px" width="100px" />
+<br> -->
 <!-- EVENT BINDING -->
-<button (click)="onClick()">Event Binding</button>
+<!-- <button (click)="onClick()">Event Binding</button>
 <br>
 <br>
 <button (click)="onClick1()">Event Binding1</button>
 <br>
-<br>
+<br> -->
 <!-- ngModel Directive for 2-way binding -->
-<input [(ngModel)]="random_number" type="text">
+<!-- <input [(ngModel)]="random_number" type="text">
 <br>
 <br>
 <h4>{{random_number}}</h4>
@@ -23,37 +53,37 @@
     <li *ngFor="let course of courses" [ngStyle]="{'color':mycolor}">
         {{course.courseid}} - {{course.coursename}}
     </li>
-</ul>
+</ul> -->
 <!-- mycolor-red -->
-<input [(ngModel)]="mycolor" type="text" />
+<!-- <input [(ngModel)]="mycolor" type="text" />
 <div [ngStyle]="{'color':mycolor}">Change the Color</div>
-<hr>
+<hr> -->
 <!--Multiple Styles-->
-<p [ngStyle]="{'color': 'purple',
+<!-- <p [ngStyle]="{'color': 'purple',
                  'font-size': '24px',
                  'font-weight': 'bold',
                  'font-family':'cursive',
                   'text-shadow':'3px 2px 3px yellow'}">
     Multiple styles
 </p>
-<hr>
+<hr> -->
 <!-- ngStyle Demo -->
-<ul *ngFor="let person of people">
+<!-- <ul *ngFor="let person of people">
     <li [ngStyle]="{'font-size.px':16}" [style.color]="getColor(person.country)">{{ person.name }}-({{ person.country
         }})
     </li>
 </ul>
-<hr>
+<hr> -->
 <!-- ngClass Demo -->
-<ul *ngFor="let person of people">
+<!-- <ul *ngFor="let person of people">
     <li [class.text-danger]="person.country === 'UK'" [class.text-info]="person.country === 'USA'"
         [class.text-success]="person.country === 'IN'" [class.text-primary]="person.country === 'AUS'">{{ person.name }} ({{ person.country }})
     </li>
 </ul>
-<br>
+<br> -->
 <!--ngClass-->
-<div class="row" class="container-fluid">
+<!-- <div class="row" class="container-fluid">
     <div [ngClass]="cssArray"> Red Text with Size 20px : from component as object</div>
 </div>
 
-<hr>
+<hr> -->

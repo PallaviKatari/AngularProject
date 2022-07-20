@@ -14,7 +14,8 @@ import { CoursesComponent } from './courses/courses.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularCourseComponent } from './angular-course/angular-course.component';
 import { ReactCourseComponent } from './react-course/react-course.component';
-
+import { SignupComponent } from './signup/signup.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,13 +26,15 @@ import { ReactCourseComponent } from './react-course/react-course.component';
     CareerComponent,
     CoursesComponent,
     AngularCourseComponent,
-    ReactCourseComponent
+    ReactCourseComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
