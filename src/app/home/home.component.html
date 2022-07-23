@@ -1,21 +1,21 @@
 <!-- iterate through all the JSON data from the home.service.ts -->
 <div style="margin-top: auto;">
     <div class="row">
-        <div class="card col-lg-6" *ngFor="let item of users" style="margin-top: 50px;">
+        <div class="card col-lg-4" *ngFor="let item of users" style="margin-top: 50px;">
             <div class="card-body col-lg-12">
-                <div class="row" style="border: solid;border-color: rgb(8, 8, 8);margin-top: 50px;">
-                    <div class="col-lg-5">
+                <div class="row" style="border: solid;border-color: rgb(69, 10, 178);margin-top: 50px;border-radius: 10px;margin-left: 30px;margin-right: 30px;width:450px;">
+                    <div class="col-lg-6">
                         <!-- PROPERTY BINDING -->
                         <img [src]="item.image">
                     </div>
-                    <div class="col-lg-7" style="margin-top: 30px;">
+                    <div class="col-lg-6" style="margin-top: 30px;">
                         <div>
                             <!-- CLASS BINDING-ngClass,EVENT BINDING-(click),PIPES -->
                             {{item.name.firstname+ " " + item.name.lastname | uppercase}}
                             <span [ngClass]="getClass()" (click)="showUserDetailsToggle()"></span>
                         </div>
                         <!-- TOGGLE EFFECT - SHOW AND HIDE CUSTOMERS DETAILS -->
-                        <div [hidden]="userDetail">
+                        <div [hidden]="userDetail"> <!--hidden is false-->
                             <p>{{item.username | uppercase}}</p>
                             <p>{{item.email}}</p>
                             <p>{{item.phone}}</p>

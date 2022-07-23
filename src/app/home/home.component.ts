@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
 //Toggle effect to show and hide the customer details
   userDetail = false;
   showUserDetailsToggle() {
-    this.userDetail = !this.userDetail;
+    this.userDetail = !this.userDetail;//!false
   }
   //class to show the change in + and - in the button
   getClass() {

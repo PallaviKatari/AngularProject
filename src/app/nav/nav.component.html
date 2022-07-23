@@ -30,8 +30,9 @@
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <input #courseName placeholder="Enter Course"/>&nbsp;&nbsp;
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="AddCourse(courseName.value); courseName.value=''">Search</button>&nbsp;&nbsp;
+            <app-search [course]= "courseSelected"></app-search>
         </form>
     </div>
 </nav>
