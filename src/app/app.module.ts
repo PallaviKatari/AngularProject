@@ -9,7 +9,6 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { CareerComponent } from './career/career.component';
-import { CoursesComponent } from './courses/courses.component';
 //Angular provides a client HTTP API
 import { HttpClientModule } from '@angular/common/http';
 import { AngularCourseComponent } from './angular-course/angular-course.component';
@@ -26,7 +25,6 @@ import { SearchComponent } from './search/search.component';
     FooterComponent,
     HomeComponent,
     CareerComponent,
-    CoursesComponent,
     AngularCourseComponent,
     ReactCourseComponent,
     SignupComponent,
